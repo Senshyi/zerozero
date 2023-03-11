@@ -10,7 +10,23 @@ pub struct DatabaseSettings {
     pub password: String,
     pub port: u16,
     pub host: String,
-    pub database_anem: String,
+    pub database_name: String,
+}
+
+impl DatabaseSettings {
+    pub fn connect_string(&self) -> String {
+        format!(
+            "postgres://{}:{}@{}:{}/{}",
+            self.username, self.password, self.host, self.port, self.database_name
+        )
+    }
+
+    pub fn connect_string_without_db(&self) -> String {
+        format!(
+            "postgres://{}:{}@{}:{}",
+            self.username, self.password, self.host, self.port
+        )
+    }
 }
 
 pub fn get_configuration() -> Result<Settings, config::ConfigError> {
