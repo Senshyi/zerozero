@@ -40,8 +40,7 @@ impl EmailClient {
             html_body: html_content,
             text_body: text_content,
         };
-        let builder = self
-            .http_client
+        self.http_client
             .post(&url)
             .header("api-key", self.authorization_token.expose_secret())
             .json(&request_body)

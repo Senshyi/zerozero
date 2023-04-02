@@ -10,7 +10,7 @@ path = "src/lib.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-actix-web = "4"
+actix-web = "4.3.1"
 tokio = { version = "1", features = ["macros", "rt"] }
 serde = { version = "1", features = ["derive"] }
 config = "0.13"
@@ -52,3 +52,4 @@ fake = "~2.3"
 quickcheck = "0.9.2"
 quickcheck_macros = "0.9.1"
 serde_json = "1"
+linkify = "0.9"
